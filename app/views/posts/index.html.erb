@@ -1,0 +1,11 @@
+<div>
+	<h1>
+		List of posts
+	</h1>
+	<div>
+		<%= form_for(:search, url: posts_path, method: :get) do |f| %>
+		<%= f.text_field :search%>
+		<% end %>
+
+	</div>
+</div>
