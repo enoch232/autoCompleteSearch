@@ -3,9 +3,21 @@
 		List of posts
 	</h1>
 	<div>
+		<%= link_to "New Post", new_post_path %>
+	</div>
+	<div>
 		<%= form_for(:search, url: posts_path, method: :get) do |f| %>
 		<%= f.text_field :search%>
+		<%= f.submit "Search" %>
 		<% end %>
-
+	</div>
+	<div>
+		<% @posts.each do |post| %>
+		<div>
+			<%= post.title %>
+			<%= post.description %>
+			<%= post.price %>
+		</div>
+		<% end %>
 	</div>
 </div>
