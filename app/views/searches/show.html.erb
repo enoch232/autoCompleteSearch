@@ -3,17 +3,16 @@
 		Search results
 	</h1>
 	<div>
-		<% if @searches %>
-		<%= @searches.properties.each do |search| %>
+		<% if @search.properties.empty? %>
+		No results
+		<% else %>
+		<% @search.properties.each do |search| %>
 		<div>
-		<%= search.title %>
-		<%= search.price %>
-		<%= link_to "View", search %>
+			<%= search.title %>
+			<%= search.price %>
+			<%= link_to "View", search %>
 		</div>
 		<% end %>
-		<% else %>
-		No results
 		<% end %>
-
 	</div>
 </div>

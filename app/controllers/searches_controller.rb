@@ -1,19 +1,23 @@
 class SearchesController < ApplicationController
+  def index
+  	@searches = Search.all
+  end
   def new
   	@search = Search.new
-  end 
+  end
   def create
   	@search = Search.new(search_params)
-  	
-  	redirect_to @search
+  	if @search.save
+  	  redirect_to @search
+  	else
+  	  render :new
+  	end
   end
   def show
-  	@
+  	@search = Search.find(params[:id])
   end
   private
   def search_params
   	params.require(:search).permit(:title)
   end
-
-
 end
