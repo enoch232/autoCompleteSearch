@@ -6,8 +6,8 @@
 		<%= link_to "New Post", new_post_path %>
 	</div>
 	<div>
-		<%= form_for(:search, url: posts_path, method: :get) do |f| %>
-		<%= f.text_field :search%>
+		<%= form_for(:search, url: searches_path) do |f| %>
+		<%= f.text_field :title %>
 		<%= f.submit "Search" %>
 		<% end %>
 	</div>
