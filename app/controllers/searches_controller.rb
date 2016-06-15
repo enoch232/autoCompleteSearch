@@ -1,6 +1,6 @@
 class SearchesController < ApplicationController
   def index
-  	@searches = Search.all
+  	@searches = Search.all.order("created_at DESC")
   end
   def new
   	@search = Search.new
@@ -14,7 +14,7 @@ class SearchesController < ApplicationController
   	end
   end
   def show
-  	@search = Search.find(params[:id])
+  	@search = Search.find(params[:id]).order("created_at DESC")
   end
   private
   def search_params
