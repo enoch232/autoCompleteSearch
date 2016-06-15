@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :find_params, only: [:new, :create, :destroy, :update, :edit]
+  before_action :find_params, only: [:destroy, :update, :edit, :show]
   def index
   	@posts = Post.all
   end
@@ -8,12 +8,19 @@ class PostsController < ApplicationController
   end
   def create
   	@post = Post.new(post_params)
+  	if @post.save
+  	  redirect_to root_path
+  	else
+      render :new
+  	end
   end 
   def show
   end
   def edit
   end
   def update
+  	@post.update(post_params)
+  	redirect_to @post
   end
   def destroy
   	@post.destroy
@@ -21,7 +28,7 @@ class PostsController < ApplicationController
   end
   private
   def post_params 
-  	params.require(:posts).permit(:title, :description, :price)
+  	params.require(:post).permit(:title, :description, :price)
   end
   def find_params
   	@post = Post.find(params[:id])
