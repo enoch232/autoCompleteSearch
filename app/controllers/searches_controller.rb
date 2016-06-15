@@ -1,10 +1,19 @@
 class SearchesController < ApplicationController
+  def new
+  	@search = Search.new
+  end 
   def create
-  	@searches = Post.all.where(["title LIKE ?", params[:title]]) if params[:title].present?
-  	redirect_to searches_path
+  	@search = Search.new(search_params)
+  	
+  	redirect_to @search
   end
-  def index
+  def show
+  	@
+  end
+  private
+  def search_params
+  	params.require(:search).permit(:title)
+  end
 
-  end
 
 end
