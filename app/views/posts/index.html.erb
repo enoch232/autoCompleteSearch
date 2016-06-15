@@ -17,6 +17,7 @@
 			<%= post.title %>
 			<%= post.description %>
 			<%= post.price %>
+			<%= link_to "Delete", post, method: :delete, data: {confirm: "Are you sure? "} %>
 		</div>
 		<% end %>
 	</div>

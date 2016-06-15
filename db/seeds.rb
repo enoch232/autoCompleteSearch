@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+@posts = Post.create([{title: "First Post", description: "Nothing much", price: 100},{title: "Second Post", description: "Nothing much", price: 150},{title: "Third Post", description: "Nothing much", price: 200}])
