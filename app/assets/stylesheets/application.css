@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+ul.ui-autocomplete{
+	background-color: white;
+	position:absolute;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: solid 1px #999;
+	cursor: default;
+	li{
+		z-index:999;
+		background-color: white;
+		border-top:1px solid black;
+		margin: 0 ;
+		padding: 0;
+		a{
+			color:black;
+			display:block;
+			padding:3px;
+		}
+	}
+}
+.ui-helper-hidden-accessible{
+	display:none;
+}
