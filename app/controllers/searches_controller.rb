@@ -14,7 +14,7 @@ class SearchesController < ApplicationController
   	end
   end
   def show
-  	@search = Search.find(params[:id]).order("created_at DESC")
+  	@search = Search.find(params[:id])
   end
   private
   def search_params

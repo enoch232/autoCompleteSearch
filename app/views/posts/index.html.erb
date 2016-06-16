@@ -7,7 +7,7 @@
 	</div>
 	<div>
 		<%= form_for(:search, url: searches_path) do |f| %>
-		<%= f.text_field :title %>
+		<%= f.text_field :title, id: "search-field" %>
 		<%= f.submit "Search" %>
 		<% end %>
 	</div>
