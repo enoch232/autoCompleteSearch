@@ -5,7 +5,7 @@ class SearchSuggestion < ActiveRecord::Base
     suggestions.order("popularity desc").limit(10).pluck(:term)
   end
   
-  def self.index_products
+  def self.index_posts
     Post.find_each do |post|
       index_term(post.title)
       post.title.split.each { |t| index_term(t) }
